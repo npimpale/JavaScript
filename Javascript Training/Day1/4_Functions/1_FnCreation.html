@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <button id="btnJS">Click Me!</button>
+        <script>
+            /* Hello();
+            // Function declaration syntax( Functions are also Hoisted)
+            function Hello(){
+                document.write("Hello Javascript Function!");
+            } */
+            /* //Function expression syntax
+            var hello = function(){
+                document.write("Hello Javascript Function Expression!");
+                document.write("Type of Hello ", typeof hello);
+            }
+            hello(); */
+
+            /* //Function Constructor syntax
+            var hello = new Function('document.write("Hello Javascript Function Constructor!");');
+            hello(); */
+            document.getElementById("btnJS").addEventListener('click', Add1(12, 14));
+            function Add1(x,y){
+                return x+y;
+            }
+
+            var Add2 = function (x,y){
+                return x+y;
+            }
+
+            var Add3 = (x,y) => x+y;
+
+            //Arrow function Ecma 6 specs
+            var Add3 = (x,y) => {
+                return x+y;
+            }
+
+        </script>
+    </body>
+</html>

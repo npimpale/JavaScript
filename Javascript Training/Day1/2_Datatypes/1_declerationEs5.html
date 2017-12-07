@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html lang="eng">
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            'use strict'
+            var x = "Nikhil";
+            console.log("before",x);
+
+            //IIFE - Immediately Invoked Function Expression
+            (function (){
+                console.log("inside IFFE",x);
+                //var x = 1;
+                console.log("afte x assigned",x);
+            })();
+            console.log("after", x);
+            /* function Check(){
+                var x = "Nikhil";
+                if(true){
+                    var x= 10;
+                }
+                return x;
+            }
+            console.log(Check()); */
+        </script>
+    </body>
+</html>

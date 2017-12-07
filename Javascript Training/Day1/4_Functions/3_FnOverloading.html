@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        //ideal example of implementing function overloading
+        var Hello = (function () {
+            function M1() {
+                console.log("Hello World!");
+            }
+
+            function M2(name) {
+                console.log("Hello, ", name);
+            }
+
+            return function () {
+                if (arguments.length == 0)
+                    M1();
+                else if (arguments.length == 1)
+                    M2(arguments[0]);
+                else
+                    throw "Invalid Parameters";
+            }
+        })();
+
+        Hello();
+        Hello("Manish");
+    </script>
+</body>
+
+</html>
