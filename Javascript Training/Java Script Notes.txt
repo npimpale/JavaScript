@@ -50,8 +50,35 @@ Visual Studio Code download link : https://code.visualstudio.com/download
 31.You can pass a function to a function. For this you may use Function Expression syntax.
 32.In Arrow function once you introduce { } you must use return for result.
 33.Function Overloading is not supported in JavaScript. But we can implement the overloading.
+Day2
+34.Closure is nothing but scoping of variables and which in turn returns a function or functions.
+35.Closure is one way to create a namespace.
+36.Closure is also some sort of module in javascript.
+37.4_ObjectLiterals.html is logically a singleton but not technically as we are not using "new" keyword.
+38.You need to give a uniqueness to your js and css files so those dont get cached in the browser and your functionality will not get affected due to stale js files in the browser cache.
+39.In Javascript the context is represented where you place the function. But you may also change the context as well by using Display.call(<thisArg> that can be any object literal).
+40."Cal, apply and bind" are used to change the context of the object literal against you want them to be called.
+41.this represents the object who initiates the call and not the the object itself. The initiator is more important that the object which holds the function.
+42.Either you dont use this keyword or you manually change the context.
+43.Common place pattern in javascript. Dont use this keyword. Its used to fix the context of the object you are creating.
+44.Another way to implement fixed context is arrow functions.
+45.You can add new properties to the object on the fly.
+46.Anything you add to object.prototype will be copied to all the instances.
+47."===" is similar to "==" in java for object reference check.
+48.Prototype is the best way to use if you have n number of instances.
+48.Use Closure if you want to return only one function and only less number of times.
+49.You cannot have multiple constructros in ES6 class. No modifiers.
+50.If you use this keyword that is accessible to outside functions as well.
+51.Convention : use _ for local variables.
+52.No concept of polymorphism as we cannot havr the type of varialbe to be stated to the right or variable.
+53.
 
 Assigment
 1.Create overloaded Add with variable number of args which should return the result and not log the result in console.
 
 https://onedrive.live.com/?authkey=%21AIBzis3B48cnMsg&id=B799ADB9BA789C8F%21689&cid=B799ADB9BA789C8F
+
+
+manish_vbn@hotmail.com
+manishvbn@gmail.com (FB, LinkedIn)
++91 9822025942
