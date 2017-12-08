@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script src="./Calculator.js"></script>
+    <script>
+        //Ecma 5 method
+        var Ad = Calculator.Add;
+        var Su = Calculator.Sub;
+        console.log(Ad(1, 4));
+        console.log(Su(1, 4));
+
+        //Ecma 6 method
+        var { Add, Sub } = Calculator;
+        console.log(Add(1, 4));
+        console.log(Sub(1, 4));
+
+        var arr = [1, 2, 3, 4, 5, 6];
+        //Ecma 5 Array Destructuring
+        var x = arr[0];
+        var y = arr[1];
+        console.log(x);
+        console.log(y);
+
+        //Ecma 6 Array Destructuring
+        var [m, n] = arr;
+        console.log(m);
+        console.log(n);
+
+        //skip 1 value in array
+        var [m, , n] = arr;
+        console.log(m);
+        console.log(n);
+
+        //Swaping in Javascript
+        console.log("Before ", x, y);
+        [x, y] = [y, x];
+        console.log("After ", x, y);
+    </script>
+</body>
+
+</html>

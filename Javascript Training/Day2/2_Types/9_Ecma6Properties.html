@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        class Employee {
+            constructor() {
+                this._firstname = "Not Set";
+            }
+
+            set FirstName(n) {
+                if (!n)
+                    throw "Firstname cannot be empty";
+                this._firstname = n;
+            }
+
+            get FirstName() {
+                return this._firstname;
+            }
+        }
+
+        var e1 = new Employee();
+        console.log(e1.FirstName);
+        e1.FirstName = "Manish";
+        console.log(e1.FirstName);
+
+    </script>
+</body>
+
+</html>

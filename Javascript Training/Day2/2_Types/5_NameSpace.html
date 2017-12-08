@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        /* var Synechron = {};
+        (function (nameSpace) {
+            function Person(n) {
+                this._name = n;
+            }
+
+            Person.prototype.getName = function () {
+                return this._name;
+            }
+
+            Person.prototype.setName = function (n) {
+                this._name = n;
+            }
+
+            nameSpace.Person = Person;
+        })(Synechron); */
+
+        //using "this" as a proxy for synechron
+        var Synechron = {};
+        (function () {
+            function Person(n) {
+                this._name = n;
+            }
+
+            Person.prototype.getName = function () {
+                return this._name;
+            }
+
+            Person.prototype.setName = function (n) {
+                this._name = n;
+            }
+
+            this.Person = Person;
+        }).apply(Synechron);
+
+
+
+        var p1 = new Synechron.Person("Manish");
+        console.log(p1.getName());
+        p1.setName("Pravin")
+        console.log(p1.getName());
+
+        var p2 = new Synechron.Person("Abhijeet");
+        console.log(p2.getName());
+        p2.setName("Ramakant")
+        console.log(p2.getName());
+    </script>
+</body>
+
+</html>

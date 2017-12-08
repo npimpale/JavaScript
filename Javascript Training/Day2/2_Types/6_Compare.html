@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        //Closure
+        function ClCounter(countby) {
+            var count = 0;
+            return {
+                prev: function () {
+                    return count -= countby;
+                },
+                next: function () {
+                    return count += countby;
+                }
+            };
+        };
+
+        //Function using this keyword
+        function FnCounter(cby) {
+            this.count = 0;
+            this.countby = cby;
+
+            this.prev = function () {
+                return this.count -= this.countby;
+            };
+
+            this.next = function () {
+                return this.count += this.countby;
+            };
+        }
+
+        //Prototype
+        var PtCounter = (function () {
+            function PtCounter(cby) {
+                this.count = 0;
+                this.countby = cby;
+            }
+
+            PtCounter.prototype.prev = function () {
+                return this.count -= this.countby;
+            };
+
+            PtCounter.prototype.next = function () {
+                return this.count += this.countby;
+            };
+
+            return PtCounter;
+        })();
+
+        function Test() {
+            var clStTime = new Date();
+            for (let i = 0; i < 200000; i++) {
+                var obj = ClCounter(i);
+            }
+            var clEndTime = new Date();
+
+            var fnStTime = new Date();
+            for (let i = 0; i < 200000; i++) {
+                var obj = new FnCounter(i);
+            }
+            var fnEndTime = new Date();
+
+            var ptStTime = new Date();
+            for (let i = 0; i < 200000; i++) {
+                var obj = new PtCounter(i);
+            }
+            var ptEndTime = new Date();
+
+            var clTime = clEndTime.getTime() - clStTime.getTime(); 
+            var fnTime = fnEndTime.getTime() - fnStTime.getTime(); 
+            var ptTime = ptEndTime.getTime() - ptStTime.getTime(); 
+
+            console.log("Closure: ", clTime);
+            console.log("Function: ", fnTime);
+            console.log("Prototype: ", ptTime);
+        }
+
+        Test();
+    </script>
+</body>
+
+</html>

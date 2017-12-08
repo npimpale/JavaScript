@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            //This is the bad way to do it.
+            function Person(n){
+                this._name = n;
+                this.getName = function(){
+                    return this._name;
+                }
+                this.setName = function(name){
+                    return this._name = name;
+                }
+            }
+            var p1 = new Person("Nikhil");
+            console.log(p1.getName());
+            p1.setName("Kunal");
+            console.log(p1.getName());
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        //Changing the context of the function even after not including it in the object. 
+        // function Display() {
+        //     console.log(this);
+        // }
+
+        // // var p = { name: "Just", Display: function(){
+        // //     console.log(this);
+        // // } };
+
+        // p.Display();
+
+        //Change Context
+        function Display(a, b) {
+            console.log(this);
+            console.log(a, b);
+        }
+
+        var p1 = { name: "Nikhil" };
+        var p2 = { name: "Kunal" };
+
+        Display("Hi", "There");
+
+        Display.call(p1, "Hi", "There");
+        Display.call(p2, "Hi", "There");
+
+        // Display.apply(p);
+
+        // var pDisplay = Display.bind(p); //This does not call the function only binds it the specified object.
+        // pDisplay();
+    </script>
+</body>
+
+</html>

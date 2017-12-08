@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        'use strict'
+        // var count = 0;
+        // function Next() {
+        //     return count += 1;
+        // }
+
+        // console.log(Next());
+        // console.log(Next());
+        // count = "ABC";
+        // console.log(Next());
+
+        // Scope the count
+        // var Next = (function () {
+        //     var count = 0;
+        //     return function(){
+        //         return count += 1;
+        //     }
+        // })();
+
+        // console.log(Next());
+        // console.log(Next());
+        // console.log(Next());
+
+        function Counter(countby) {
+            var count = 0;
+            return {
+                cnt: function () {
+                    return count += 1;
+                }
+            }
+        };
+
+        var counter5 = Counter(5);
+
+        console.log(counter5());
+        console.log(counter5());
+        console.log(counter5());
+
+        var counter10 = Counter(10);
+
+        console.log(counter10());
+        console.log(counter10());
+        console.log(counter10());
+    </script>
+</body>
+
+</html>

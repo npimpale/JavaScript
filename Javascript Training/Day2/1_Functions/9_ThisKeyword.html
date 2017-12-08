@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        // function Person(a) {
+        //     this.age = a;
+
+        //     this.growOld = function () {
+        //         console.log(this);
+        //         this.age += 1;
+        //     }
+        // }
+
+        // function Person(a) {
+        //     var self = this;            
+        //     self.age = a;
+
+        //     self.growOld = function () {
+        //         self.age += 1;
+        //     }
+        // }
+        //Another method to maintain the context of the object. Arrow function.
+        function Person(a) {
+            this.age = a;
+
+            this.growOld = () => {
+                this.age += 1;
+            }
+        }
+
+        var p = new Person(10);
+        // console.log(p.age);
+
+        // setInterval(function () { 
+        //     p.growOld();
+        //     console.log(p.age);
+        // }, 1000);
+
+        setInterval(p.growOld, 1000);
+        // setInterval(p.growOld.bind(p), 1000);
+
+        setInterval(function () { 
+            console.log(p.age);
+        }, 1000);
+    </script>
+</body>
+
+</html>

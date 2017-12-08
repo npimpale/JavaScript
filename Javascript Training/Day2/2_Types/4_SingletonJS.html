@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+
+        var Logger = (function () {
+            function Logger() {
+                this.Log = function (m) {
+                    console.log(m + ", logged by the Logger");
+                }
+            }
+
+            var logger;
+
+            return {
+                getInstance: function () {
+                    if (!logger)
+                        logger = new Logger();
+                    return logger;
+                }
+            };
+        })();
+
+        var l1 = Logger.getInstance();
+        l1.Log("Check Message");
+
+        var l2 = Logger.getInstance();
+        l2.Log("Check Message");
+
+        console.log(l1 === l2);
+
+    </script>
+</body>
+
+</html>

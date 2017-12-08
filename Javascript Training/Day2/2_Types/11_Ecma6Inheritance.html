@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        class Vehicle{
+            constructor(m = "Honda"){
+                this.make = m;
+            }
+            start(){
+                return this.make + "engine started..";
+            }
+        }
+
+        class FourWheeller extends Vehicle{
+            constructor(mk = "Honda", md = "Civic"){
+                super(mk);
+                this.model = md;
+            }
+            move (){
+                return "Moving like a car";
+            }
+
+            start(){
+                return super.start + "for " + this.model;
+            }
+        }
+
+        
+    </script>
+</body>
+
+</html>

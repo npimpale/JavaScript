@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        //adding attributes or property on the fly.
+        //if you create a new object then you dont get color again.
+        //for this you need to add it to prototype.
+        //Prototype
+        var toy1 = new Object();
+        // toy1.color = "red";
+        Object.prototype.color = "red";
+        Object.prototype.hello = function () {
+            console.log(this);
+        }
+
+        Object.Check = function () {
+            console.log(this);
+        }
+
+        console.log(toy1.color);
+
+        var toy2 = new Object();
+        console.log(toy2.hello());
+    </script>
+</body>
+
+</html>

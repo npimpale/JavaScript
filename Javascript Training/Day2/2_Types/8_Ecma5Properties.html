@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        // function Employee() { }
+
+        // Object.defineProperty(Employee.prototype, "fullname", {
+        //     value: "Not Set",
+        //     writable: true,
+        //     enumerable: true
+        // });
+
+        var Employee = (function () {
+            function Employee() { }
+
+            var _fname, _lname;
+
+            Object.defineProperty(Employee.prototype, "firstname", {
+                set: function (n) {
+                    if (!n)
+                        throw "First Name cannot be empty";
+                    _fname = n;
+                },
+                get: function () {
+                    return _fname;
+                },
+                enumerable: true
+            });
+
+            Object.defineProperty(Employee.prototype, "lastname", {
+                set: function (n) {
+                    if (!n)
+                        throw "Last Name cannot be empty";
+                    _lname = n;
+                },
+                get: function () {
+                    return _lname;
+                },
+                enumerable: false
+            });
+
+            return Employee;
+        })();
+
+        var e1 = new Employee();
+        // e1.firstname = "Manish";
+        // e1.lastname = "Sharma";
+        // // e1.firstname = "";
+        // console.log(e1.firstname + " " + e1.lastname);
+
+        for (var key in e1) {
+            console.log(key);
+        }
+
+        var obj = { id: 1 };
+        Object.freeze(obj);
+    </script>
+</body>
+
+</html>

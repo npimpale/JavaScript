@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        //Basic simple object
+        // var obj = new Object();
+        // console.log(obj);
+        // console.log(typeof obj);    
+
+        //Object Literal with variables and functions.
+        // var obj = {
+        //     id: 1, name: "Manish", display: function () {
+        //         console.log(this);
+        //     }
+        // };
+        // console.log(obj.id);
+        // console.log(obj.name);
+        // obj.display()
+
+        //Stringify the object to cnvert to Json.
+        // console.log(obj);
+        // console.log(JSON.stringify(obj));
+
+        
+        function Counter(countby) {
+            var count = 0;
+            return {
+                prev: function () {
+                    return count -= countby;
+                },
+                next: function () {
+                    return count += countby;
+                }
+            };
+        };
+
+        var cnt5 = Counter(5);
+        console.log(cnt5.next());
+        console.log(cnt5.next());
+        console.log(cnt5.next());
+        console.log(cnt5.prev());
+        console.log(cnt5.next());
+    </script>
+</body>
+
+</html>
