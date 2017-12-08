@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Add = (function (){
+                function A1(n){
+                    console.log("Inside A1");
+                    var strSum = "";
+                    for (let i = 0; i < n.length; i++) {
+                        strSum += array[i];
+                    }
+                    return strSum;
+                }
+
+                function A2(n){
+                    var sum = 0;
+                    console.log("Inside A2");
+                    for (let i = 0; i < n.length; i++) {
+                        sum += n[i];
+                    }
+                    return sum;
+                }
+                
+                return function (){
+                    if(arguments.length <=1){
+                        throw "Expected number of arguments is 2 or more..";
+                    }else {
+                        var flag = false;
+                        for (let i = 0; i < arguments.length; i++) {
+                            if(typeof arguments[i] == "string"){
+                                flag = true;
+                                break;
+                            }
+                        }
+                        if(flag){
+                            return A1(arguments);
+                        }
+                        return A2(arguments);
+                    }
+                }
+            }
+        )
+        console.log("Addition is "+ Add(10));
+        console.log("Addition is "+ Add(10,20));
+        console.log("Addition is "+ Add(10,20,30,40));
+        console.log("Addition is "+ Add(10,"abc"));
+        console.log("Addition is "+ Add("abc", "pqr"));
+    </script>
+</body>
+</html>
